@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "trix";
+@import "actiontext";
+@import 'actiontext.css';
+
+@layer base {
+  body {
+    @apply bg-purple-100 m-0 p-0;
+  }
+
+  /* Explicitly include input[type="text"] to override browser-specific default styles */
+  input_not[type="file"], input[type="text"], input[type="date"], textarea, select {
+    @apply text-sm w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm 
+      transition duration-300 ease-in-out transform 
+      focus:outline-purple-300 
+      hover:shadow-lg hover:border-purple-300 
+      bg-gray-100;
+  }
+
+  textarea {
+    @apply h-24;
+  }
+
+  trix-editor {
+    @apply min-h-60;
+  }
+  
+  input[type='submit'] {
+    @apply bg-black text-white border rounded-3xl p-2 w-full hover:shadow-xl;
+  }
+}
+
+/* Course Enrollment status classes */
+@layer utilities {
+  .status {
+    @apply text-xs font-medium w-24 p-1 rounded-xl text-center;
+  }
+  .status-not-started {
+    @apply bg-gray-300;
+  }
+  .status-started {
+    @apply bg-purple-300;
+  }
+  .status-completed {
+    @apply bg-lime-300;
+  }
+  .status-not-enrolled {
+    @apply text-white bg-black;
+  }
+
+  .filter {
+    @apply bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-300;
+  }
+
+  .filter-active {
+    @apply bg-purple-800;
+  }
+
+  .error-message {
+    @apply text-red-500 text-sm mb-1;
+  }
+
+  .border-error {
+    @apply border-red-500 bg-red-50 focus:ring-red-500 !important;
+  }
+}

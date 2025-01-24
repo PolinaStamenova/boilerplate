@@ -1,0 +1,17 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PolinaStamenova/boilerplate.git",
+  "author": "Polina Stamenova <polina.stamenova@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/tailwind.css --watch"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@rails/actiontext": "^8.0.100",
+    "trix": "^2.1.12"
+  }
+}
